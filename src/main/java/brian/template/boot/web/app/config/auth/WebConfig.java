@@ -42,12 +42,13 @@ public class WebConfig extends WebSecurityConfigurerAdapter{
 
 		
 		http.csrf().disable()
-			.authorizeRequests().antMatchers("/authenticate").permitAll()
-			.anyRequest().authenticated()
-			.and()
-			.exceptionHandling().authenticationEntryPoint(entryPoint)
-			.and()
-			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+			.authorizeRequests().antMatchers("/*").permitAll();
+//			.authorizeRequests().antMatchers("/authenticate", "/h2-console").permitAll()
+//			.anyRequest().authenticated()
+//			.and()
+//			.exceptionHandling().authenticationEntryPoint(entryPoint)
+//			.and()
+//			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		
 //		anyRequest().authenticated().and().
 //		// make sure we use stateless session; session won't be used to

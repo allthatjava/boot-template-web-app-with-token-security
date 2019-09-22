@@ -1,14 +1,18 @@
 package brian.template.boot.web.app.domain;
 
-public class AuthResponse {
+import java.io.Serializable;
 
-	private final String jwttoken;
+public class AuthResponse implements Serializable {
+
+	private String token;
+	
+	public AuthResponse() {}
 
 	public AuthResponse(String jwttoken) {
-		this.jwttoken = jwttoken;
+		this.token = jwttoken;
 	}
 
 	public String getToken() {
-		return this.jwttoken;
+		return this.token;
 	}
 }
